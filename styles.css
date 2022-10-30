@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+.timer__items {
+  display: flex;
+  font-size: 48px;
+}
+.timer__item {
+  position: relative;
+  min-width: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+.timer__item::before {
+  content: attr(data-title);
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  font-size: 14px;
+}
+.timer__item:not(:last-child)::after {
+  content: ':';
+  position: absolute;
+  right: -15px;
+}
+.field-checkbox {
+  display: block;
+}
+
+.checkbox {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: block;
+  margin: 1em;
+}
+
+.checkbox>.input-checkbox {
+  display: none;
+}
+
+.checkbox .text {
+  color: #6a759b;
+}
+
+.checkbox .flag {
+  display: inline-block;
+  width: 64px;
+  height: 40px;
+  border-radius: 20px;
+  vertical-align: middle;
+  transition: 0.25s 0.09s;
+  position: relative;
+  background: #deeff7;
+}
+
+.checkbox .flag:after {
+  content: " ";
+  display: block;
+  width: 30px;
+  height: 30px;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.4);
+  transition: 0.15s;
+}
+
+.checkbox>.input-checkbox:checked+i {
+  background: #f0d4af;
+}
+
+.checkbox>.input-checkbox:checked+.flag+.text {
+  color: #c9a990;
+}
+
+.checkbox>.input-checkbox:checked+.flag:after {
+  transform: translateX(25px);
+}
+
+.hidden {
+  display: none;
+}
+.start, .stop{
+  display: block;
+  font-size: 22px;
+    border: none;
+    background-color: #2e80b3;
+    color: white;
+    border-radius: 5px;
+    width: 140px;
+    height: 50px;
+    transition: .3s;
+    margin-right: 15px;
+    margin-left: 15px;
+
+}
