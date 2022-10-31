@@ -11,9 +11,9 @@ function countdownTimer() {
     sound.play();
     timerInterval = setInterval(function () {
         timer += 1 / 60;
-        secsVal = Math.floor((timer - Math.floor(timer)) * 100);
-        minsVal = Math.floor(timer) - Math.floor(timer / 60) * 60;
-        hourVal = Math.floor(timer / 60);
+      let secsVal = Math.floor((timer - Math.floor(timer)) * 100);
+       let minsVal = Math.floor(timer) - Math.floor(timer / 60) * 60;
+       let hourVal = Math.floor(timer / 60);
         secs.innerHTML = secsVal < 10 ? "0" + secVal.toString() : secsVal;
         mins.innerHTML = mins < 10 ? "0" + mins.toString() : mins;
         hour.innerHTML = hourVal < 10 ? "0" + hourVal.toString() : hourVal;
