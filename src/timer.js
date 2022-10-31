@@ -1,7 +1,6 @@
 
-const hour = document.querySelector('.timer__hours');
-const mins = document.querySelector('.timer__minutes');
 const secs = document.querySelector('.timer__seconds');
+const mins = document.querySelector('.timer__minutes');
 const start = document.querySelector('.start');
 
 let timer = 0;
@@ -11,13 +10,13 @@ function countdownTimer() {
     sound.play();
     timerInterval = setInterval(function () {
         timer += 1 / 60;
-      let secsVal = Math.floor((timer - Math.floor(timer)) * 100);
-       let minsVal = Math.floor(timer) - Math.floor(timer / 60) * 60;
-       let hourVal = Math.floor(timer / 60);
+      let secsVal = Math.floor(timer) - Math.floor(timer/60) * 60;
+       let minsVal = Math.floor(timer/60);
+       
         secs.innerHTML = secsVal < 10 ? "0" + secVal.toString() : secsVal;
-        mins.innerHTML = mins < 10 ? "0" + mins.toString() : mins;
-        hour.innerHTML = hourVal < 10 ? "0" + hourVal.toString() : hourVal;
-    }, 1000);
+        mins.innerHTML = minsVal < 10 ? "0" + minsVal.toString() : minsVal;
+        
+    }, 1000/60);
     
 
     function stop() {
